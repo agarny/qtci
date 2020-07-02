@@ -312,6 +312,14 @@ Controller.prototype.FinishedPageCallback = function() {
 	tryFinish();   
 }
 
+Controller.prototype.ObligationsPageCallback = function()
+{
+    var page = gui.pageWidgetByObjectName("ObligationsPage");
+    page.obligationsAgreement.setChecked(true);
+    page.completeChanged();
+    gui.clickButton(buttons.NextButton);
+}
+
 EOF
 
 chmod u+x $1
