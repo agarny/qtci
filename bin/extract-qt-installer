@@ -320,6 +320,18 @@ Controller.prototype.ObligationsPageCallback = function()
     gui.clickButton(buttons.NextButton);
 }
 
+Controller.prototype.ObligationsPageCallback = function()
+{
+    var page = gui.pageWidgetByObjectName("ObligationsPage");
+    page.obligationsAgreement.setChecked(true);
+    var individualCheckbox = gui.findChild(page, "IndividualPerson")
+    if (individualCheckbox) {
+        individualCheckbox.checked = true;
+    }
+    page.completeChanged();
+    gui.clickButton(buttons.NextButton);
+}
+
 EOF
 
 chmod u+x $1
